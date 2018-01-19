@@ -19,7 +19,7 @@ Usage:
 EOF
 }
 
-print_arg(){
+print(){
     case "$1" in
 	"videoboard")
 	    print_video_card $1
@@ -36,17 +36,23 @@ print_video_card(){
 	echo "Video Card Used:"$(head -n1 <<< $query | cut -f2 -d:)
 	if [ $VERBOSE ];
 	then
-		echo "All info: "$query
+		verbose "$query"
 	fi
 	exit 0
 }
 
+verbose(){
+    cat <<EOF
+--- Verbose Mode ---
+$1
+EOF
+}
 
 while true; do
   case "$1" in
     -v | --verbose ) VERBOSE=true; shift ;;
     -h | --help ) usage; shift ;;
-    -p | --print ) print_arg $2; shift ;;
+    -p | --print ) print $2; shift ;;
     -- ) shift; break ;;
     * ) break ;;
   esac
