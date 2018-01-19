@@ -13,32 +13,32 @@ Usage:
         -h | --help     Help
         -v | --verbose  Verbose activate
         -p | --print (Use verbose for more info)
-	   "videoboard" Video Board Info
-	   "motherboard" Mother Board Info
-	   "soundboard" Sound Board Info
+           "videoboard" Video Board Info
+           "motherboard" Mother Board Info
+           "soundboard" Sound Board Info
 EOF
 }
 
 print(){
     case "$1" in
-	"videoboard")
-	    print_video_card $1
-	    ;;
-	*)
-	    echo "Err: Invalid Option"
-	    usage
-	    exit 1
+        "videoboard")
+            print_video_card $1
+            ;;
+        *)
+            echo "[$1] Err: Invalid Option"
+            usage
+            exit 1
     esac
 }
 
 print_video_card(){
-	query=$(glxinfo | grep OpenGL)
-	echo "Video Card Used:"$(head -n1 <<< $query | cut -f2 -d:)
-	if [ $VERBOSE ];
-	then
-		verbose "$query"
-	fi
-	exit 0
+        query=$(glxinfo | grep OpenGL)
+        echo "Video Card Used:"$(head -n1 <<< $query | cut -f2 -d:)
+        if [ $VERBOSE ];
+        then
+                verbose "$query"
+        fi
+        exit 0
 }
 
 verbose(){
