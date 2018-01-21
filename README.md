@@ -2,6 +2,8 @@
 
 Some tedious checks
 
+only tested in `Arch linux 4.14.13-1-ARCH`
+
 ### INSTALL
 ```sh
 sudo ln -fs $(pwd)/tedious.sh /bin/tedious ; sudo chmod +x /bin/tedious
