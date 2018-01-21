@@ -3,7 +3,7 @@
 Some tedious checks
 
 ### USAGE
-```
+```usage
   -h | --help     Help
   -v | --verbose  Verbose activate
   -p | --print    Some infos about system, possible parameters: (Use verbose for more info)
