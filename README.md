@@ -4,7 +4,7 @@ Some tedious checks
 
 ### INSTALL
 ```
-	sudo -ln -s $(pwd)/tedious.sh /bin/tedious ; sudo chmod +x /bin/tedious
+	sudo ln -fs $(pwd)/tedious.sh /bin/tedious ; sudo chmod +x /bin/tedious
 ```
 
 ### USAGE
