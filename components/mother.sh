@@ -9,9 +9,9 @@ print(){
 	dir=/sys/devices/virtual/dmi/id
         cat <<EOF
 Mother Board:
-       "Vendor": $(cat ${dir}/board_vendor)
-       "Name": $(cat ${dir}/board_name)
-       "Version": $(cat ${dir}/board_version)
+       "Vendor": `< ${dir}/board_vendor`
+       "Name": `< ${dir}/board_name`
+       "Version": `< ${dir}/board_version`
 EOF
     fi
     exit 0
