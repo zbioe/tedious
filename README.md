@@ -3,7 +3,7 @@
 Some tedious checks
 
 ### INSTALL
-```
+```sh
 sudo ln -fs $(pwd)/tedious.sh /bin/tedious ; sudo chmod +x /bin/tedious
 ```
 
