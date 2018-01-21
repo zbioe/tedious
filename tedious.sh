@@ -25,7 +25,7 @@ print(){
             usage
             exit 1
     fi
-    sh $component "print" $VERBOSE
+    sh $component "print"
 }
 
 while true; do
